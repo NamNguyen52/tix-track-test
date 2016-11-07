@@ -1,0 +1,17 @@
+<div class="customer-modal bordered" ng-show="showModal">
+  <h2><b>Create Customer</b></h2>
+  <input
+    type="test"
+    name="first-name"
+    value=""
+    placeholder="First Name"
+    ng-model="enteredFirstName">
+  <input
+    type="test"
+    name="last-name"
+    value=""
+    placeholder="Last Name"
+    ng-model="enteredLastName">
+  <button type="submit" name="button" ng-click="addNewCustomer()">Save</button>
+  <button type="submit" name="button" ng-click="toggleModal()">Cancel</button>
+</div>

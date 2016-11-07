@@ -1,0 +1,47 @@
+<div ng-controller="HomeCtrl as home">
+  <div class="container">
+
+    <!-- Fixed side -->
+    <div class="side-bar bordered">
+      <div class="side-bar-item" ng-repeat="item in home.menuItems">
+        <h3><b>{{ item }}</b></h3>
+      </div>
+    </div>
+
+    <!-- Flex right side -->
+    <div class="fluid-section">
+      <button type="button" name="customer-modal" ng-click="home.toggleModal()" class="new-cust-btn">New Customer</button>
+      <table class="bordered">
+        <!-- Table Header -->
+        <tr>
+          <td class="table-header bordered">
+            <h3>Last Name</h3>
+          </td>
+          <td class="table-header bordered">
+            <h3>First Name</h3>
+          </td>
+        </tr>
+        <!-- Table Data -->
+        <tr ng-repeat="customer in home.customers">
+          <td class="bordered">
+            {{ customer.first }}
+          </td>
+          <td class="bordered">
+            {{ customer.last }}
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- new customer modal -->
+    <customer-modal
+      show-modal="home.showModal"
+      entered-first-name="home.enteredFirstName"
+      entered-last-name="home.enteredLastName"
+      toggle-modal="home.toggleModal()"
+      add-new-customer="home.addNewCustomer()"
+    >
+    </customer-modal>
+
+  </div>
+</div>
